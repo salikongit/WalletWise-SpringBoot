@@ -1,0 +1,29 @@
+# ===== Backend (Spring Boot) =====
+target/
+*.jar
+*.war
+*.log
+
+# ===== Frontend (React) =====
+node_modules/
+dist/
+build/
+
+# ===== Environment files =====
+.env
+*.env
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE files =====
+.vscode/
+.idea/
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== Docker =====
+docker-compose.override.yml
