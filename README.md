@@ -66,19 +66,19 @@
 ```mermaid
 sequenceDiagram
     participant User
-    participant Frontend (Netlify)
-    participant Backend (Render + Docker)
-    participant Database (Aiven MySQL)
+    participant Frontend as Frontend (Netlify)
+    participant Backend as Backend (Render & Docker)
+    participant Database as Database (Aiven MySQL)
     participant SendGrid
-    
-    User->>Frontend (Netlify): Interacts with UI
-    Frontend (Netlify)->>Backend (Render + Docker): REST API Calls (Axios)
-    Backend (Render + Docker)->>Database (Aiven MySQL): CRUD Operations (JPA/Hibernate)
-    Database (Aiven MySQL)-->>Backend (Render + Docker): Results
-    Backend (Render + Docker)->>SendGrid: OTP Email Requests
-    SendGrid-->>User: Delivers OTP Email
-    Backend (Render + Docker)-->>Frontend (Netlify): JSON Response
-    Frontend (Netlify)-->>User: Renders UI
+
+    User->>Frontend: Interacts with UI
+    Frontend->>Backend: REST API Calls (Axios)
+    Backend->>Database: CRUD Operations (JPA/Hibernate)
+    Database-->>Backend: Results
+    Backend->>SendGrid: OTP Email Request
+    SendGrid-->>User: Deliver OTP Email
+    Backend-->>Frontend: JSON Response
+    Frontend-->>User: Render UI
 ```
 
 * **Frontend** communicates with the **Backend** via secure REST APIs.
